@@ -20,7 +20,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
       {/* greet user */}
       {user.userInfo ? (
         <div className="bg-gray-100 p-4 text-center">
-          Welcome back, {user.userInfo.displayName}
+          Welcome back, {user.userInfo.displayName?.toLowerCase() ?? ""}
         </div>
       ) : null}
       {children}

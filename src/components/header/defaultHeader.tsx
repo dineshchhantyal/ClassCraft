@@ -30,13 +30,13 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
           <Clock9Icon className="h-6 w-6" />
           <span className="hidden md:inline">ClassCraft</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        {/* <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href="#">Components</Link>
           <Link href="#">Resources</Link>
           <Link href="#">Blog</Link>
           <Link href="#">Pricing</Link>
           <Link href="#">Enterprise</Link>
-        </nav>
+        </nav> */}
         {user ? (
           <div className="flex items-center gap-4 md:gap-6">
             <Link href="/course-plan">
@@ -47,7 +47,7 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">
+                <div className="rounded-full overflow-hidden border-2 border-gray-200 shadow-sm hover:filter hover:brightness-105 cursor-pointer">
                   {user.photoURL ? (
                     <Image
                       alt="Profile"
@@ -59,7 +59,7 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
                   ) : (
                     <User className="h-4 w-4" />
                   )}
-                </Button>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel>Account</DropdownMenuLabel>
@@ -126,7 +126,7 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
                   <Github className="mr-2 h-4 w-4" />
                   <span>GitHub</span>
                 </DropdownMenuItem> */}
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.push("/support")}>
                   <LifeBuoy className="mr-2 h-4 w-4" />
                   <span>Support</span>
                 </DropdownMenuItem>

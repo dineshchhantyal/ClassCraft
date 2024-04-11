@@ -5,8 +5,12 @@ import { cn } from "@/lib/utils";
 import Layout from "@/components/layout/layout";
 import AuthLayout from "@/components/layout/authLayout";
 import { Input } from "@/components/ui/input";
+import { use } from "react";
+import { useAuthContext } from "@/context/AuthContext";
+import Link from "next/link";
 
 export default function Home() {
+  const { userInfo: user } = useAuthContext();
   return (
     <>
       <section className="w-full py-12 md:py-24 lg:py-32">
@@ -20,24 +24,32 @@ export default function Home() {
                 Plan your courses. Share your insights. Level up your learning.
               </p>
             </div>
-            <form
-              className="flex flex-col gap-2 max-w-[400px]"
-              action="/signup"
-              method="get"
-            >
-              <label className="sr-only" htmlFor="email">
-                Enter your email
-              </label>
-              <Input
-                className="mx-auto w-full max-w-[400px]"
-                placeholder="Enter your email"
-                type="email"
-                name="email"
-              />
-              <Button className="mx-auto w-full max-w-[400px]" type="submit">
-                Sign Up
-              </Button>
-            </form>
+            {user ? (
+              <div>
+                <Link href="/course-plan">
+                  <Button>Course Plan</Button>
+                </Link>
+              </div>
+            ) : (
+              <form
+                className="flex flex-col gap-2 max-w-[400px]"
+                action="/signup"
+                method="get"
+              >
+                <label className="sr-only" htmlFor="email">
+                  Enter your email
+                </label>
+                <Input
+                  className="mx-auto w-full max-w-[400px]"
+                  placeholder="Enter your email"
+                  type="email"
+                  name="email"
+                />
+                <Button className="mx-auto w-full max-w-[400px]" type="submit">
+                  Sign Up
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </section>

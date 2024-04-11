@@ -9,6 +9,9 @@ import Layout from "@/components/layout/layout";
 import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast";
 import { useSearchParams } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import { signInWithGoogle } from "@/firebase/auth/signInWithGoogle";
 
 function Page() {
   const router = useRouter();
@@ -43,6 +46,22 @@ function Page() {
 
     // else successful
     console.log(result);
+    return router.push("/course-plan");
+  };
+
+  const handleSignWithGoogle = async () => {
+    const { result, error } = await signInWithGoogle();
+
+    if (error) {
+      return console.log(error);
+    }
+
+    toast({
+      description: "Sign in successful",
+      variant: "default",
+    });
+    // else successful
+
     return router.push("/course-plan");
   };
   return (
@@ -81,6 +100,21 @@ function Page() {
             <Button type="submit">Sign up</Button>
           </div>
         </form>
+        <Separator className="my-3" />
+        {/* sign in with google button */}
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <Button type="button" onClick={handleSignWithGoogle}>
+            <Image
+              alt="Google"
+              src="/google.svg"
+              width="20"
+              height="20"
+              className="mr-2"
+            />
+            Sign up with Google
+          </Button>
+        </div>
+        <Separator className="my-3" />
         {/* sign in */}
         <div className=" w-full max-w-sm  gap-1.5 text-center mt-3">
           <span>Already have a account? </span>
