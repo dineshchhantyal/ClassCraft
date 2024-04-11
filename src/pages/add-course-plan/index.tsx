@@ -5,14 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import React, { useCallback, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import { CalendarIcon, Settings2 } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -32,6 +26,7 @@ import {
 } from "@/components/ui/popover";
 import { format } from "date-fns";
 import { Label } from "@/components/ui/label";
+import courses from "@/data/courses.json";
 
 const Page = () => {
   const router = useRouter();
@@ -39,23 +34,34 @@ const Page = () => {
   const [endDate, setEndDate] = useState<Date>();
   const [coursePlanName, setCoursePlanName] = useState("");
   const [creditHours, setCreditHours] = useState(7);
+  const [activeCourse, setActiveCourse] = useState<Course[]>(courses);
 
   const [times, setTimes] = useState([8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const courses = [
-    {
-      id: 1,
-      name: "CSCI 1070-40409",
-      time: "8:00am-9:15am",
-      startTime: 8,
-      endTime: 9.15,
-      location: "Hemphill Hall 308",
-      days: ["Mon", "Wed"],
-    },
-  ];
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // const courses = [
+  //   {
+  //     id: 1,
+  //     name: "CSCI 1070-40409",
+  //     time: "8:00am-9:15am",
+  //     startTime: 8,
+  //     endTime: 9.15,
+  //     location: "Hemphill Hall 308",
+  //     days: ["Mon", "Wed"],
+  //   },
+  // ];
 
   const days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
   const colors = ["yellow-200", "green-200", "blue-200", "red-200"];
+  const filterCoursesByNameAndDescription = (search: string) => {
+    setActiveCourse(() =>
+      courses.filter((course) => {
+        return (
+          course.name.toLowerCase().includes(search.toLowerCase()) ||
+          course.location.toLowerCase().includes(search.toLowerCase())
+        );
+      })
+    );
+  };
 
   const classByDay =
     ((day: string) => {
@@ -85,6 +91,14 @@ const Page = () => {
     },
     [courses]
   );
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      filterCoursesByNameAndDescription(e.target.value);
+    },
+    []
+  );
+
   return (
     <section className="container mx-auto mt-4">
       {" "}
@@ -98,7 +112,9 @@ const Page = () => {
               onChange={(e) => setCoursePlanName(e.target.value)}
               placeholder="Change Name"
             ></Input>
-            <span className="text-lg font-semibold">{creditHours} credits</span>
+            <span className="text-lg font-semibold">
+              {creditHours} credits(ULM)
+            </span>
 
             <span className="text-sm text-gray-500">Semester Date</span>
             <Dialog>
@@ -201,8 +217,26 @@ const Page = () => {
               </DialogContent>
             </Dialog>
             <div className="relative w-full">
-              <Input placeholder="Search: CSCI, ENGL, etc." className="py-6" />
+              <Input
+                placeholder="Search: CSCI, ENGL, etc."
+                className="py-6"
+                onChange={handleSearchChange}
+              />
               <SearchIcon className="absolute right-3 top-3 text-gray-500 hover:text-gray-300 cursor-not-allowed" />
+            </div>
+            <div className="space-y-4 max-h-[400px] overflow-y-scroll">
+              {activeCourse.map((course) => (
+                <div
+                  key={course.id}
+                  className="flex justify-between items-center p-2 rounded-md cursor-pointer hover:bg-gray-100"
+                >
+                  <div>
+                    <p className="text-sm">{course.name}</p>
+                    <p className="text-xs">{course.location}</p>
+                  </div>
+                  <PlusIcon className="h-6 w-6 text-gray-500" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -383,4 +417,73 @@ function ShareIcon(props: React.SVGProps<SVGSVGElement>) {
       <line x1="12" x2="12" y1="2" y2="15" />
     </svg>
   );
+}
+
+export interface Course {
+  id: number;
+  name: string;
+  description?: string;
+  time: string;
+  semester: string;
+  year: number;
+  difficulty: number;
+  startTime: number;
+  endTime: number;
+  location: string;
+  days: string[];
+  upvotes: number;
+  downvotes: number;
+  medium: string;
+  attendance_required: boolean;
+  attendance_medium: string;
+  workload: number;
+  knowledge: number;
+  grading: number;
+  helpfulness: number;
+  purchase_required: boolean;
+  purchase_amount: number;
+  project_required: boolean;
+  professor: Professor;
+  comments: Comment[];
+  assignments: Assignment[];
+  exams: Exam[];
+}
+
+export interface Professor {
+  name: string;
+  rating: number;
+  reviews: number;
+  courses: ProfessorCourse[];
+}
+
+export interface ProfessorCourse {
+  id: number;
+  name: string;
+  rating: number;
+  reviews: number;
+  description?: string;
+}
+
+export interface Comment {
+  id: number;
+  user: string;
+  rating: number;
+  comment: string;
+}
+
+export interface Assignment {
+  id: number;
+  name: string;
+  dueDate: string;
+  grade: number;
+  medium: string;
+}
+
+export interface Exam {
+  id: number;
+  name: string;
+  date: string;
+  time: string;
+  location: string;
+  medium: string;
 }
