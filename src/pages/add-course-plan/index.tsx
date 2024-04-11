@@ -37,6 +37,9 @@ const Page = () => {
   const router = useRouter();
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
+  const [coursePlanName, setCoursePlanName] = useState("");
+  const [creditHours, setCreditHours] = useState(7);
+
   const [times, setTimes] = useState([8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const courses = [
@@ -88,66 +91,15 @@ const Page = () => {
       <div className="flex justify-between">
         <div className="w-1/5">
           <div className="flex flex-col space-y-2">
-            <h1 className="text-3xl font-bold">Fall 2024</h1>
-            <span className="text-lg font-semibold">21 credits</span>
+            {/* <h1 className="text-3xl font-bold">Fall 2024</h1> */}
+            <Input
+              className="text-3xl font-bold"
+              value={coursePlanName ?? "Change Name"}
+              onChange={(e) => setCoursePlanName(e.target.value)}
+              placeholder="Change Name"
+            ></Input>
+            <span className="text-lg font-semibold">{creditHours} credits</span>
 
-            <div className="flex space-x-2 items-center cursor-pointer">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      className="text-gray-500 hover:text-orange-300 "
-                    >
-                      <PlusIcon
-                        onClick={() => {
-                          router.push("/add-course-plan");
-                        }}
-                      />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>New Course Plan</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline">
-                      <PrinterIcon className="text-gray-500 hover:text-gray-300 " />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Print</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline">
-                      <DownloadIcon className="text-gray-500 hover:text-gray-300 " />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Download</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline">
-                      <ShareIcon className="text-gray-500 hover:text-gray-300 " />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Share</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
             <span className="text-sm text-gray-500">Semester Date</span>
             <Dialog>
               <DialogTrigger asChild>
@@ -159,7 +111,7 @@ const Page = () => {
                         endDate,
                         "MM/dd/yyyy"
                       )}`
-                    : "Add Semester Date"}
+                    : "Set Semester Date"}
                   <Settings2 className="ml-2 h-4 w-4" />
                 </Button>
               </DialogTrigger>

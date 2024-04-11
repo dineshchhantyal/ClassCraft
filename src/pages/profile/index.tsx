@@ -82,7 +82,7 @@ export default function Page() {
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="grid grid-cols-2 items-center gap-4">
+          <div className="grid grid-cols-2 items-center gap-x-4">
             <Label className="text-sm" htmlFor="email">
               Email
             </Label>
@@ -93,6 +93,13 @@ export default function Page() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            <p className="m-0"></p>
+            {/* email verified */}
+            {user?.emailVerified ? (
+              <p className="text-green-500 text-sm m-1">Email verified</p>
+            ) : (
+              <p className="text-red-500 text-sm m-1">Email not verified</p>
+            )}
           </div>
           <div className="grid grid-cols-2 items-center gap-4">
             <Label className="text-sm" htmlFor="password">
