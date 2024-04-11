@@ -8,6 +8,7 @@ import { toast } from "@/components/ui/use-toast";
 import { useAuthContext } from "@/context/AuthContext";
 import { useState } from "react";
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
 
 export default function Page() {
   const { userInfo: user } = useAuthContext();
@@ -101,12 +102,28 @@ export default function Page() {
               <p className="text-red-500 text-sm m-1">Email not verified</p>
             )}
           </div>
+          <div className="flex items-center gap-4">
+            <Button size="sm">Submit</Button>
+          </div>
+          <Separator />
           <div className="grid grid-cols-2 items-center gap-4">
             <Label className="text-sm" htmlFor="password">
-              Password
+              Old Password
             </Label>
             <Input
               id="password"
+              placeholder="Enter password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="grid grid-cols-2 items-center gap-4">
+            <Label className="text-sm" htmlFor="new-password">
+              New Password
+            </Label>
+            <Input
+              id="new-password"
               placeholder="Enter password"
               type="password"
               value={password}
@@ -125,6 +142,9 @@ export default function Page() {
               onChange={(e) => setConfirm(e.target.value)}
             />
           </div>
+          <div className="flex items-center gap-4">
+            <Button size="sm">Change Password</Button>
+          </div>
           <div className="grid grid-cols-2 items-center gap-4">
             <Label className="text-sm" htmlFor="code">
               Invite Code
@@ -137,14 +157,19 @@ export default function Page() {
             />
           </div>
           <div className="flex items-center gap-4">
-            <Button size="sm">Submit</Button>
+            <Button size="sm">Submit Code</Button>
           </div>
         </div>
       </div>
+      <Separator />
       {/* log out button */}
-      <div className="container max-w-3xl px-4 py-8 md:px-6 md:py-12">
-        <div className="flex items-center gap-4">
-          <Button onClick={handleLogOut} size="sm" variant="destructive">
+      <div className="container max-w-3xl px-4 py-2 md:px-6">
+        <div className="flex items-center gap-4 w-full">
+          <Button
+            onClick={handleLogOut}
+            className="w-full"
+            variant="destructive"
+          >
             Log out
           </Button>
         </div>
