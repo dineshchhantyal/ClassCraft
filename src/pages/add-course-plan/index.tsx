@@ -13,11 +13,30 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Settings2 } from "lucide-react";
-import { Label } from "@radix-ui/react-dropdown-menu";
+import { CalendarIcon, Settings2 } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { format } from "date-fns";
+import { Label } from "@/components/ui/label";
 
 const Page = () => {
   const router = useRouter();
+  const [startDate, setStartDate] = useState<Date>();
+  const [endDate, setEndDate] = useState<Date>();
   const [times, setTimes] = useState([8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const courses = [
@@ -130,31 +149,104 @@ const Page = () => {
               </TooltipProvider>
             </div>
             <span className="text-sm text-gray-500">Semester Date</span>
-            <Button variant="destructive">
-              {/* start date and end date of sem */}
-              08/26/2024 - 12/14/2024 <Settings2 className="ml-2 h-4 w-4" />
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="destructive">
+                  {/* start date and end date of sem */}
+                  {/* 08/26/2024 - 12/14/2024 */}
+                  {startDate && endDate
+                    ? `${format(startDate, "MM/dd/yyyy")} - ${format(
+                        endDate,
+                        "MM/dd/yyyy"
+                      )}`
+                    : "Add Semester Date"}
+                  <Settings2 className="ml-2 h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Edit Semester Date</DialogTitle>
+                  <DialogDescription>
+                    Make changes to your semester date
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="start-date" className="text-right">
+                      Start Date
+                    </Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-[240px] justify-start text-left font-normal",
+                            !startDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {startDate ? (
+                            format(startDate, "PPP")
+                          ) : (
+                            <span>Pick a date</span>
+                          )}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={startDate}
+                          onSelect={setStartDate}
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="end-date" className="text-right">
+                      End Date
+                    </Label>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-[240px] justify-start text-left font-normal",
+                            !endDate && "text-muted-foreground"
+                          )}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {endDate ? (
+                            format(endDate, "PPP")
+                          ) : (
+                            <span>Pick a date</span>
+                          )}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={endDate}
+                          onSelect={setEndDate}
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                </div>
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button type="button" variant="secondary">
+                      Close
+                    </Button>
+                  </DialogClose>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
             <div className="relative w-full">
-              <Input
-                placeholder="Search: CSCI, ENGL, etc."
-                className="py-6"
-                disabled
-              />
+              <Input placeholder="Search: CSCI, ENGL, etc." className="py-6" />
               <SearchIcon className="absolute right-3 top-3 text-gray-500 hover:text-gray-300 cursor-not-allowed" />
             </div>
-          </div>
-          {/* end of semester approaching, cannot edit please give feedback */}
-          <div className="bg-yellow-100 p-4 rounded-md mt-4">
-            <p className="text-sm text-gray-500 my-2">
-              The end of the semester is approaching. You can no longer edit
-              your schedule. Please give feedback on your experience.
-            </p>
-            <p className="text-sm cursor-pointer hover:underline my-2 text-gray-500">
-              Help other students by sharing your class experience.{" "}
-            </p>
-            <Link href="/share-experience">
-              <Button variant="default">Share Class Experience</Button>
-            </Link>
           </div>
         </div>
         <div className="w-4/5 flex ml-2 gap-2">
