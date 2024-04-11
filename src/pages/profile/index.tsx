@@ -75,7 +75,7 @@ export default function Page() {
       {/* log out button */}
       <div className="container max-w-3xl px-4 py-8 md:px-6 md:py-12">
         <div className="flex items-center gap-4">
-          <Button onClick={handleLogOut} size="sm" variant="outline">
+          <Button onClick={handleLogOut} size="sm" variant="destructive">
             Log out
           </Button>
         </div>
