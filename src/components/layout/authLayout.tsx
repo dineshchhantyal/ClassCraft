@@ -8,10 +8,13 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
 
   React.useEffect(() => {
-    if (user == null) router.push("/");
-  }, [user]);
+    console.log(user);
+    if (user == null) {
+      router.push("/signin");
+    }
+  }, [router, user]);
 
-  return <h1>Only logged in users can view this page</h1>;
+  return <>{children}</>;
 };
 
 export default AuthLayout;

@@ -33,7 +33,6 @@ function Page() {
         description: "Please verify your email",
         variant: "default",
       });
-      return console.log("Please verify your email");
     } else {
       console.log("Email verified");
     }
