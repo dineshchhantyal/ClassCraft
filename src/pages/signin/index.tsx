@@ -23,6 +23,10 @@ function Page() {
     const { result, error } = await signIn(email, password);
 
     if (error) {
+      toast({
+        description: "Sign in failed, please try again.",
+        variant: "destructive",
+      });
       return console.log(error);
     }
     toast({
