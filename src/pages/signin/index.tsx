@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/layout";
+import Link from "next/link";
 
 function Page() {
   const [email, setEmail] = React.useState("");
@@ -23,7 +24,7 @@ function Page() {
 
     // else successful
     console.log(result);
-    return router.push("/admin");
+    return router.push("/");
   };
   return (
     <main className="grid place-items-center">
@@ -57,9 +58,15 @@ function Page() {
             </Label>
           </div>
           <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Button type="submit">Sign up</Button>
+            <Button type="submit">Sign in</Button>
           </div>
         </form>
+        <div className=" w-full max-w-sm  gap-1.5 text-center mt-3">
+          <span>Don&apos;t have an account? </span>
+          <Link href="/signup" className="text-blue-500">
+            Sign up
+          </Link>
+        </div>
       </div>
       {/* test  */}
     </main>
