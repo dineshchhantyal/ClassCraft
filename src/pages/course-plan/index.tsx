@@ -3,7 +3,7 @@ import Layout from "@/components/layout/layout";
 import React from "react";
 
 const Page = () => {
-  return <div>Course Plan</div>;
+  return <section className="container mx-auto">Course Plan</section>;
 };
 
 export default Page;

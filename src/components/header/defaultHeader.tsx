@@ -27,8 +27,8 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
       <div className="container flex items-center justify-between px-4 md:px-6">
         <Link className="flex items-center space-x-2 font-bold" href="/">
           <span className="sr-only">Logo</span>
-          <Clock9Icon className="h-6 w-6" />
-          <span className="hidden md:inline">ClassCraft</span>
+          <Clock9Icon className="h-6 w-6 text-orange-600" />
+          <span className="hidden md:inline text-orange-500">ClassCraft</span>
         </Link>
         {/* <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href="#">Components</Link>
