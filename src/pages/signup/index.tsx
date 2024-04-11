@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Layout from "@/components/layout/layout";
 
 function Page() {
   const [email, setEmail] = React.useState("");
@@ -65,3 +66,7 @@ function Page() {
 }
 
 export default Page;
+
+Page.getLayout = function getLayout(page: React.ReactNode) {
+  return <Layout>{page}</Layout>;
+};
