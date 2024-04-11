@@ -116,7 +116,11 @@ const Page = () => {
               08/26/2024 - 12/14/2024
             </Button>
             <div className="relative w-full">
-              <Input placeholder="Search: bio > 300, math" className="py-6" />
+              <Input
+                placeholder="Search: bio > 300, math"
+                className="py-6"
+                disabled
+              />
               <SearchIcon className="absolute right-3 top-3 text-gray-500 hover:text-gray-300 cursor-not-allowed" />
             </div>
           </div>
