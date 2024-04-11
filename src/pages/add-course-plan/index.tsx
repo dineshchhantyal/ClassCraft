@@ -13,6 +13,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Settings2 } from "lucide-react";
+import { Label } from "@radix-ui/react-dropdown-menu";
 
 const Page = () => {
   const router = useRouter();
@@ -27,51 +29,6 @@ const Page = () => {
       endTime: 9.15,
       location: "Hemphill Hall 308",
       days: ["Mon", "Wed"],
-    },
-    {
-      id: 2,
-      name: "CSCI 3030-43896",
-      time: "11:00am-12:15pm",
-      location: "Hemphill Hall",
-      startTime: 11,
-      endTime: 12.15,
-      days: ["Tues", "Thur"],
-    },
-    {
-      id: 3,
-      name: "ENGL 2050-44685",
-      time: "12:30pm-1:45pm",
-      location: "George T Walker Hall 3-91",
-      startTime: 12.5,
-      endTime: 1.45,
-      days: ["Mon", "Wed"],
-    },
-    {
-      id: 4,
-      name: "CSCI 4055-45480",
-      time: "2:00pm-3:15pm",
-      location: "Hemphill Hall",
-      startTime: 2,
-      endTime: 3.15,
-      days: ["Tues", "Thur"],
-    },
-    {
-      id: 5,
-      name: "CINS 3044-40277",
-      time: "11:00am-12:15pm",
-      location: "Hemphill Hall",
-      startTime: 11,
-      endTime: 12.15,
-      days: ["Mon", "Wed"],
-    },
-    {
-      id: 6,
-      name: "CSCI 3020-42501",
-      time: "12:30pm-1:45pm",
-      location: "Hemphill Hall 308",
-      startTime: 12.5,
-      endTime: 1.45,
-      days: ["Tues", "Thur"],
     },
   ];
 
@@ -111,7 +68,7 @@ const Page = () => {
       {" "}
       <div className="flex justify-between">
         <div className="w-1/5">
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-2">
             <h1 className="text-3xl font-bold">Fall 2024</h1>
             <span className="text-lg font-semibold">21 credits</span>
 
@@ -172,10 +129,10 @@ const Page = () => {
                 </Tooltip>
               </TooltipProvider>
             </div>
-
-            <Button variant="destructive" disabled>
+            <span className="text-sm text-gray-500">Semester Date</span>
+            <Button variant="destructive">
               {/* start date and end date of sem */}
-              08/26/2024 - 12/14/2024
+              08/26/2024 - 12/14/2024 <Settings2 className="ml-2 h-4 w-4" />
             </Button>
             <div className="relative w-full">
               <Input
@@ -231,45 +188,15 @@ const Page = () => {
                     <p className="text-xs">{course.time}</p>
                     <p className="text-xs">{course.location}</p>
                     {/* vaccent space */}
-                    {Math.random() > 0.5 && <div className="h-8"></div>}
-                    {Math.random() > 0.5 && <div className="h-8"></div>}
-                    {Math.random() > 0.5 && <div className="h-8"></div>}
                   </div>
                 ))}
+                {<div className="h-8"></div>}
               </div>
               <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
+                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed h-56">
                   <p className="text-sm">CINS 3044-40277</p>
                   <p className="text-xs">11:00am-12:15pm</p>
                   <p className="text-xs">Hemphill Hall</p>
-                </div>
-                {Math.random() > 0.5 && <div className="h-8"></div>}
-
-                <div className="bg-green-200 p-2 rounded-md cursor-not-allowed">
-                  <p className="text-sm">CSCI 3020-42501</p>
-                  <p className="text-xs">12:30pm-1:45pm</p>
-                  <p className="text-xs">Hemphill Hall 308</p>
-                </div>
-                {Math.random() > 0.5 && <div className="h-8"></div>}
-                {Math.random() > 0.5 && <div className="h-8"></div>}
-                <div className="bg-red-200 p-2 rounded-md cursor-not-allowed">
-                  <p className="text-sm">CSCI 4055-45480</p>
-                  <p className="text-xs">2:00pm-3:15pm</p>
-                  <p className="text-xs">Hemphill Hall</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
-                  <p className="text-sm">CSCI 3030-43896</p>
-                  <p className="text-xs">11:00am-12:15pm</p>
-                  <p className="text-xs">Hemphill Hall</p>
-                </div>
-                {Math.random() > 0.5 && <div className="h-8"></div>}
-                {Math.random() > 0.5 && <div className="h-8"></div>}
-                <div className="bg-blue-200 p-2 rounded-md cursor-not-allowed">
-                  <p className="text-sm">ENGL 2050-44685</p>
-                  <p className="text-xs">12:30pm-1:45pm</p>
-                  <p className="text-xs">George T Walker Hall 3-91</p>
                 </div>
               </div>
               <div className="space-y-4">
@@ -278,16 +205,10 @@ const Page = () => {
                   <p className="text-xs">8:00am-9:15am</p>
                   <p className="text-xs">Hemphill Hall 308</p>
                 </div>
-                <div className="bg-green-200 p-2 rounded-md cursor-not-allowed">
-                  <p className="text-sm">CSCI 3020-42501</p>
-                  <p className="text-xs">12:30pm-1:45pm</p>
-                  <p className="text-xs">Hemphill Hall 308</p>
-                </div>
+                {<div className="h-8"></div>}
               </div>
-              {Math.random() > 0.5 && <div className="h-8"></div>}
-              {Math.random() > 0.5 && <div className="h-8"></div>}
               <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
+                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed h-56">
                   <p className="text-sm">CINS 3044-40277</p>
                   <p className="text-xs">11:00am-12:15pm</p>
                   <p className="text-xs">Hemphill Hall</p>
