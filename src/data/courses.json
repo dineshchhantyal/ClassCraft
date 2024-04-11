@@ -250,9 +250,15 @@
     "comments": [
       {
         "id": 1,
-        "user": "John Doe",
-        "rating": 5,
-        "comment": "Great professor, very helpful and understanding."
+        "user": "Sarah Adams",
+        "rating": 4,
+        "comment": "This course was fantastic. The professor was engaging and made the material interesting. The workload was manageable, and I felt like I learned a lot. Would definitely recommend this course to others. "
+      },
+      {
+        "id": 2,
+        "user": "Alex Parker",
+        "rating": 4,
+        "comment": "The course content was interesting, but the professor was not very organized. The workload was heavier than expected, and the grading criteria seemed a bit arbitrary. Overall, I think the course has potential, but there are some areas that could be improved. "
       }
     ],
     "assignments": [

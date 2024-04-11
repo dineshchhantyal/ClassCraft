@@ -27,6 +27,13 @@ import {
 import { format } from "date-fns";
 import { Label } from "@/components/ui/label";
 import courses from "@/data/courses.json";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import ViewCourseInfo from "@/components/course-card/ViewCourseInfo";
 
 const Page = () => {
   const router = useRouter();
@@ -226,16 +233,52 @@ const Page = () => {
             </div>
             <div className="space-y-4 max-h-[400px] overflow-y-scroll">
               {activeCourse.map((course) => (
-                <div
-                  key={course.id}
-                  className="flex justify-between items-center p-2 rounded-md cursor-pointer hover:bg-gray-100"
-                >
-                  <div>
-                    <p className="text-sm">{course.name}</p>
-                    <p className="text-xs">{course.location}</p>
-                  </div>
-                  <PlusIcon className="h-6 w-6 text-gray-500" />
-                </div>
+                <Dialog key={course.id}>
+                  {" "}
+                  <DialogTrigger asChild>
+                    <div
+                      key={course.id}
+                      className="flex justify-between items-center p-2 rounded-md cursor-pointer hover:bg-gray-100"
+                    >
+                      <div>
+                        <p className="text-sm">{course.name}</p>
+                        <p className="text-xs">{course.location}</p>
+                      </div>
+
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button
+                              variant="outline"
+                              className="text-gray-500 hover:text-orange-300 "
+                              onClick={() => {
+                                router.push("/add-course-plan");
+                              }}
+                            >
+                              <PlusIcon />
+                            </Button>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Add</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>{course.name}</DialogTitle>
+                      <DialogDescription>
+                        {course.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="grid gap-4 py-4">
+                      {/* more */}
+                      <ViewCourseInfo course={course} />
+                    </div>
+                    <DialogFooter></DialogFooter>
+                  </DialogContent>
+                </Dialog>
               ))}
             </div>
           </div>
