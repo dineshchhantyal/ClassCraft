@@ -200,7 +200,23 @@ const Page = () => {
             </Link>
           </div>
         </div>
-        <div className="w-4/5 flex ml-2 gap-2">
+        <div className="w-4/5 flex ml-2 gap-2 relative rounded-md ">
+          {/* overlay */}
+          <div className="absolute top-0 left-0 w-full h-full bg-gray-100 bg-opacity-50 z-50 grid place-items-center rounded-md  backdrop-blur-sm">
+            <div className="p-4 mt-4">
+              <p className="text-sm text-gray-500 my-2">
+                The end of the semester is approaching. You can no longer edit
+                your schedule. Please give feedback on your experience.
+              </p>
+              <p className="text-sm cursor-pointer hover:underline my-2 text-gray-500">
+                Help other students by sharing your class experience.{" "}
+              </p>
+              <Link href="/share-experience">
+                <Button variant="default">Share Class Experience</Button>
+              </Link>
+            </div>
+          </div>
+
           <Separator orientation="vertical" />
           <div className="times mt-8 space-y-8">
             {times.map((time) => (
