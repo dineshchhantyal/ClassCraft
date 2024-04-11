@@ -6,8 +6,10 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import React, { useCallback, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Page = () => {
+  const router = useRouter();
   const [times, setTimes] = useState([8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const courses = [
@@ -106,7 +108,12 @@ const Page = () => {
           <div className="flex flex-col space-y-4">
             <h1 className="text-3xl font-bold">Fall 2024</h1>
             <div className="flex space-x-2 items-center cursor-pointer">
-              <PlusIcon className="text-gray-500 hover:text-gray-300 cursor-not-allowed" />
+              <PlusIcon
+                className="text-gray-500 hover:text-gray-300 cursor-not-allowed"
+                onClick={() => {
+                  router.push("/add-course-plan");
+                }}
+              />
               <PrinterIcon className="text-gray-500 hover:text-gray-300 cursor-not-allowed" />
               <DownloadIcon className="text-gray-500 hover:text-gray-300 cursor-not-allowed" />
               <ShareIcon className="text-gray-500 hover:text-gray-300 cursor-not-allowed" />
