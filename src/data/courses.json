@@ -1,371 +1,724 @@
 [
-    {
-        "id": 1,
-        "name": "CSCI 1070-40409",
-        "description": "Introduction to Computing",
-        "time": "8:00am-9:15am",
-        "semester": "Fall",
-        "year": 2021,
-        "difficulty": 3,
-        "startTime": 8,
-        "endTime": 9.15,
-        "location": "Hemphill Hall 308",
-        "days": ["Mon", "Wed"],
-        "upvotes": 20,
-        "downvotes": 5,
-        "medium": "in-person",
-        "attendance_required": true,
-        "attendance_medium": "online",
-        "workload": 3,
-        "knowledge": 3,
-        "grading": 3,
-        "helpfulness": 3,
-        "purchase_required": false,
-        "purchase_amount": 0,
-        "project_required": false,
-        "professor": {
-            "name": "-",
-            "rating": 4.5,
-            "reviews": 20,
-            "courses": [
-                {
-                    "id": 1,
-                    "name": "CSCI 1070-40409",
-                    "rating": 4.5,
-                    "reviews": 20
-                },
-                {
-                    "id": 2,
-                    "name": "CSCI 3030-43896",
-                    "rating": 4.5,
-                    "reviews": 20
-                }
-            ]
+  {
+    "id": 1,
+    "name": "CSCI 1070-40409",
+    "description": "Introduction to Computing",
+    "time": "8:00am-9:15am",
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "startTime": 8,
+    "endTime": 9.15,
+    "location": "Hemphill Hall 308",
+    "days": ["Mon", "Wed"],
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "CSCI 1070-40409",
+          "rating": 4.5,
+          "reviews": 20
         },
-        "comments": [
-            {
-                "id": 1,
-                "user": "John Doe",
-                "rating": 5,
-                "comment": "Great professor, very helpful and understanding."
-            }
-        ],
-        "assignments": [
-            {
-                "id": 1,
-                "name": "Assignment 1",
-                "dueDate": "2021-09-01",
-                "grade": 100,
-                "medium": "online"
-            },
-            {
-                "id": 2,
-                "name": "Assignment 2",
-                "dueDate": "2021-09-08",
-                "grade": 100,
-                "medium": "online"
-            }
-        ],
-        "exams": [
-            {
-                "id": 1,
-                "name": "Midterm 1",
-                "date": "2021-10-01",
-                "time": "12:30pm-1:45pm",
-                "location": "George T Walker Hall 3-91",
-                "medium": "in-person"
-            },
-            {
-                "id": 2,
-                "name": "Midterm 2",
-                "date": "2021-11-01",
-                "time": "12:30pm-1:45pm",
-                "location": "George T Walker Hall 3-91",
-                "medium": "in-person"
-            }
-        ]},
+        {
+          "id": 2,
+          "name": "CSCI 3030-43896",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "CSCI 3030-43896",
+    "time": "11:00am-12:15pm",
+    "location": "Hemphill Hall",
+    "startTime": 11,
+    "endTime": 12.15,
+    "days": ["Tues", "Thur"],
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "CSCI 1070-40409",
+          "description": "Introduction to Computing",
+          "rating": 4.5,
+          "reviews": 20
+        },
+        {
+          "id": 2,
+          "name": "CSCI 3030-43896",
+          "description": "Data Structures",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
 
-                {
-                    "id": 2,
-                    "name": "ENGL 2050-44685",
-                    "upvotes": 20,
-                    "downvotes": 5,
-                    "location": "Hemphill Hall",
-                    "upvotes": 20,
-                    "downvotes": 5,
-                    "name": "CINS 3044-40277",
-                    "location": "Hemphill Hall",
-                    "upvotes": 20,
-                    "downvotes": 5,
-                    "location": "Hemphill Hall 308",
-                    "id": 3,
-                    "name": "ENGL 2050-44685",
-                    "time": "12:30pm-1:45pm",
-                    "location": "George T Walker Hall 3-91",
-                    "startTime": 12.5,
-                    "endTime": 1.45,
-                    "days": ["Mon", "Wed"],
-                    "semester": "Fall",
-                    "year": 2021,
-                    "difficulty": 3,
-                    "upvotes": 20,
-                    "downvotes": 5,
-                    "medium": "in-person",
-                    "attendance_required": true,
-                    "attendance_medium": "online",
-                    "workload": 3,
-                    "knowledge": 3,
-                    "grading": 3,
-                    "helpfulness": 3,
-                    "purchase_required": false,
-                    "purchase_amount": 0,
-                    "project_required": false,
-                    "professor": {
-                        "name": "-",
-                        "rating": 4.5,
-                        "reviews": 20
-                    },
-                    "courses": [
-                        {
-                            "id": 1,
-                            "name": "CSCI 1070-40409",
-                            "rating": 4.5,
-                            "reviews": 20
-                        },
-                        {
-                            "id": 2,
-                            "name": "CSCI 3030-43896",
-                            "rating": 4.5,
-                            "reviews": 20
-                        }
-                    ],
-                    "comments": [
-                        {
-                            "id": 1,
-                            "user": "John Doe",
-                            "rating": 5,
-                            "comment": "Great professor, very helpful and understanding."
-                        }
-                    ],
-                    "assignments": [
-                        {
-                            "id": 1,
-                            "name": "Assignment 1",
-                            "dueDate": "2021-09-01",
-                            "grade": 100,
-                            "medium": "online"
-                        },
-                        {
-                            "id": 2,
-                            "name": "Assignment 2",
-                            "dueDate": "2021-09-08",
-                            "grade": 100,
-                            "medium": "online"
-                        },
-                        {
-                            "id": 3,
-                            "name": "Assignment 3",
-                            "dueDate": "2021-09-15",
-                            "grade": 100,
-                            "medium": "online"
-                        }
-                    ],
-                    "exams": [
-                        {
-                            "id": 1,
-                            "name": "Midterm 1",
-                            "date": "2021-10-01",
-                            "time": "12:30pm-1:45pm",
-                            "location": "George T Walker Hall 3-91",
-                            "medium": "in-person"
-                        },
-                        {
-                            "id": 2,
-                            "name": "Midterm 2",
-                            "date": "2021-11-01",
-                            "time": "12:30pm-1:45pm",
-                            "location": "George T Walker Hall 3-91",
-                            "medium": "in-person"
-                        }
-                    ],
-                    "id": 4,
-                    "name": "CSCI 4055-45480",
-                    "time": "2:00pm-3:15pm",
-                    "location": "Hemphill Hall",
-                    "startTime": 2,
-                    "endTime": 3.15,
-                    "days": ["Tues", "Thur"],
-                    "semester": "Fall",
-                    "year": 2021,
-                    "difficulty": 3,
-                    "upvotes": 20,
-                    "downvotes": 5,
-                    "medium": "in-person",
-                    "attendance_required": true,
-                    "attendance_medium": "online",
-                    "workload": 3,
-                    "knowledge": 3,
-                    "grading": 3,
-                    "helpfulness": 3,
-                    "purchase_required": false,
-                    "purchase_amount": 0,
-                    "project_required": false,
-                    "professor": {
-                        "name": "-",
-                        "rating": 4.5,
-                        "reviews": 20
-                    },
-                    "courses": [
-                        {
-                            "id": 1,
-                            "name": "CSCI 1070-40409",
-                            "rating": 4.5,
-                            "reviews": 20
-                        },
-                        {
-                            "id": 2,
-                            "name": "CSCI 3030-43896",
-                            "rating": 4.5,
-                            "reviews": 20
-                        }
-                    ],
-                    "comments": [
-                        {
-                            "id": 1,
-                            "user": "John Doe",
-                            "rating": 5,
-                            "comment": "Great professor, very helpful and understanding."
-                        }
-                    ],
-                    "assignments": [
-                        {
-                            "id": 1,
-                            "name": "Assignment 1",
-                            "dueDate": "2021-09-01",
-                            "grade": 100,
-                            "medium": "online"
-                        },
-                        {
-                            "id": 2,
-                            "name": "Assignment 2",
-                            "dueDate": "2021-09-08",
-                            "grade": 100,
-                            "medium": "online"
-                        },
-                        {
-                            "id": 3,
-                            "name": "Assignment 3",
-                            "dueDate": "2021-09-15",
-                            "grade": 100,
-                            "medium": "online"
-                        }
-                    ],
-                    "exams": [
-                        {
-                            "id": 1,
-                            "name": "Midterm 1",
-                            "date": "2021-10-01",
-                            "time": "12:30pm-1:45pm",
-                            "location": "George T Walker Hall 3-91",
-                            "medium": "in-person"
-                        },
-                        {
-                            "id": 2,
-                            "name": "Midterm 2",
-                            "date": "2021-11-01",
-                            "time": "12:30pm-1:45pm",
-                            "location": "George T Walker Hall 3-91",
-                            "medium": "in-person"
-                        }
-                    ],
-                    "id": 5,
-                    "name": "CINS 3044-40277",
-                    "time": "11:00am-12:15pm",
-                    "location": "Hemphill Hall",
-                    "startTime": 11,
-                    "endTime": 12.15,
-                    "days": ["Mon", "Wed"],
-                    "semester": "Fall",
-                    "year": 2021,
-                    "difficulty": 3,
-                    "upvotes": 20,
-                    "downvotes": 5,
-                    "medium": "in-person",
-                    "attendance_required": true,
-                    "attendance_medium": "online",
-                    "workload": 3,
-                    "knowledge": 3,
-                    "grading": 3,
-                    "helpfulness": 3,
-                    "purchase_required": false,
-                    "purchase_amount": 0,
-                    "project_required": false,
-                    "professor": {
-                        "name": "-",
-                        "rating": 4.5,
-                        "reviews": 20
-                    },
-                    "courses": [
-                        {
-                            "id": 1,
-                            "name": "CSCI 1070-40409",
-                            "rating": 4.5,
-                            "reviews": 20
-                        },
-                        {
-                            "id": 2,
-                            "name": "CSCI 3030-43896",
-                            "rating": 4.5,
-                            "reviews": 20
-                        }
-                    ],
-                    "comments": [
-                        {
-                            "id": 1,
-                            "user": "John Doe",
-                            "rating": 5,
-                            "comment": "Great professor, very helpful and understanding."
-                        }
-                    ],
-                    "assignments": [
-                        {
-                            "id": 1,
-                            "name": "Assignment 1",
-                            "dueDate": "2021-09-01",
-                            "grade": 100,
-                            "medium": "online"
-                        },
-                        {
-                            "id": 2,
-                            "name": "Assignment 2",
-                            "dueDate": "2021-09-08",
-                            "grade": 100,
-                            "medium": "online"
-                        },
-                        {
-                            "id": 3,
-                            "name": "Assignment 3",
-                            "dueDate": "2021-09-15",
-                            "grade": 100,
-                            "medium": "online"
-                        }
-                    ],
-                    "exams": [
-                        {
-                            "id": 1,
-                            "name": "Midterm 1",
-                            "date": "2021-10-01",
-                            "time": "12:30pm-1:45pm",
-                            "location": "George T Walker Hall 3-91",
-                            "medium": "in-person"
-                        },
-                        {
-                            "id": 2,
-                            "name": "Midterm 2",
-                            "date": "2021-11-01",
-                            "time": "12:30pm-1:45pm",
-                            "location": "George T Walker Hall 3-91",
-                            "medium": "in-person"
-                        }
-                    ]
-                }
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "CSCI 3030-43896",
+    "time": "11:00am-12:15pm",
+    "location": "Hemphill Hall",
+    "startTime": 11,
+    "endTime": 12.15,
+    "days": ["Tues", "Thur"],
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "CSCI 1070-40409",
+          "description": "Introduction to Computing",
+          "rating": 4.5,
+          "reviews": 20
+        },
+        {
+          "id": 2,
+          "name": "CSCI 3030-43896",
+          "description": "Data Structures",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "CSCI 3030-43896",
+    "time": "11:00am-12:15pm",
+    "location": "Hemphill Hall",
+    "startTime": 11,
+    "endTime": 12.15,
+    "days": ["Tues", "Thur"],
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "CSCI 1070-40409",
+          "description": "Introduction to Computing",
+          "rating": 4.5,
+          "reviews": 20
+        },
+        {
+          "id": 2,
+          "name": "CSCI 3030-43896",
+          "description": "Data Structures",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  },
+
+  {
+    "id": 5,
+    "name": "CSCI 3030-43896",
+    "time": "11:00am-12:15pm",
+    "location": "Hemphill Hall",
+    "startTime": 11,
+    "endTime": 12.15,
+    "days": ["Tues", "Thur"],
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "CSCI 1070-40409",
+          "description": "Introduction to Computing",
+          "rating": 4.5,
+          "reviews": 20
+        },
+        {
+          "id": 2,
+          "name": "CSCI 3030-43896",
+          "description": "Data Structures",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 4,
+        "name": "Assignment 4",
+        "dueDate": "2021-09-22",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "ENGL 2002-40409",
+    "time": "8:00am-9:15am",
+    "location": "Hemphill Hall",
+    "startTime": 8,
+    "endTime": 9.15,
+    "days": ["Mon", "Wed"],
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "ENGL 2002-40409",
+          "description": "Introduction to Literature",
+          "rating": 4.5,
+          "reviews": 20
+        },
+        {
+          "id": 2,
+          "name": "ENGL 3030-43896",
+          "description": "Advanced Composition",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "ENGL 3030-43896",
+    "time": "11:00am-12:15pm",
+    "location": "Hemphill Hall",
+    "startTime": 11,
+    "endTime": 12.15,
+    "days": ["Tues", "Thur"],
+    "semester": "Fall",
+    "year": 2021,
+    "difficulty": 3,
+    "upvotes": 20,
+    "downvotes": 5,
+    "medium": "in-person",
+    "attendance_required": true,
+    "attendance_medium": "online",
+    "workload": 3,
+    "knowledge": 3,
+    "grading": 3,
+    "helpfulness": 3,
+    "purchase_required": false,
+    "purchase_amount": 0,
+    "project_required": false,
+    "professor": {
+      "name": "-",
+      "rating": 4.5,
+      "reviews": 20,
+      "courses": [
+        {
+          "id": 1,
+          "name": "ENGL 2002-40409",
+          "description": "Introduction to Literature",
+          "rating": 4.5,
+          "reviews": 20
+        },
+        {
+          "id": 2,
+          "name": "ENGL 3030-43896",
+          "description": "Advanced Composition",
+          "rating": 4.5,
+          "reviews": 20
+        }
+      ]
+    },
+    "comments": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 5,
+        "comment": "Great professor, very helpful and understanding."
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "name": "Assignment 1",
+        "dueDate": "2021-09-01",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 2,
+        "name": "Assignment 2",
+        "dueDate": "2021-09-08",
+        "grade": 100,
+        "medium": "online"
+      },
+      {
+        "id": 3,
+        "name": "Assignment 3",
+        "dueDate": "2021-09-15",
+        "grade": 100,
+        "medium": "online"
+      }
+    ],
+    "exams": [
+      {
+        "id": 1,
+        "name": "Midterm 1",
+        "date": "2021-09-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 2,
+        "name": "Midterm 2",
+        "date": "2021-10-20",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      },
+      {
+        "id": 3,
+        "name": "Final",
+        "date": "2021-12-10",
+        "time": "8:00am-9:15am",
+        "location": "Hemphill Hall 308",
+        "medium": "in-person"
+      }
+    ]
+  }
+]
