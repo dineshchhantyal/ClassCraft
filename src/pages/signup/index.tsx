@@ -8,12 +8,16 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/layout";
 import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast";
+import { useSearchParams } from "next/navigation";
 
 function Page() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const [email, setEmail] = React.useState(searchParams.get("email") || "");
+  const [password, setPassword] = React.useState("");
   const { toast } = useToast();
+
+  console.log(email);
 
   const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -51,6 +55,7 @@ function Page() {
               <p>Email</p>
               <Input
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 required
                 type="email"
                 name="email"

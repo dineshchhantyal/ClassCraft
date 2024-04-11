@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/layout";
 import Link from "next/link";
+import { toast } from "@/components/ui/use-toast";
 
 function Page() {
   const [email, setEmail] = React.useState("");
@@ -21,10 +22,13 @@ function Page() {
     if (error) {
       return console.log(error);
     }
-
+    toast({
+      description: "Sign in successful",
+      variant: "default",
+    });
     // else successful
     console.log(result);
-    return router.push("/");
+    // return router.push("/");
   };
   return (
     <main className="grid place-items-center">
