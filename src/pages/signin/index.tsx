@@ -28,7 +28,7 @@ function Page() {
     });
     // else successful
     console.log(result);
-    // return router.push("/");
+    return router.push("/course-plan");
   };
   return (
     <main className="grid place-items-center">
