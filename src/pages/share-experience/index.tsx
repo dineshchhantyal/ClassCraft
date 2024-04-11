@@ -565,7 +565,12 @@ export default function Page() {
           <TabsContent key={course.id} value={course.id + ""}>
             <Card className="w-full">
               <CardHeader>
-                <CardTitle className="text-2xl">{course.name}</CardTitle>
+                <CardTitle className="text-2xl">
+                  {completed.includes(course.id) && (
+                    <CircleCheckBig className="w-4 h-4 text-green-500"></CircleCheckBig>
+                  )}
+                  <span>{course.name}</span>
+                </CardTitle>
                 <CardDescription>{course.description}</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4">

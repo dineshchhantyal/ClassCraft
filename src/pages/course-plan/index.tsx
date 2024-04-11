@@ -122,12 +122,11 @@ const Page = () => {
                     <Button
                       variant="outline"
                       className="text-gray-500 hover:text-orange-300 "
+                      onClick={() => {
+                        router.push("/add-course-plan");
+                      }}
                     >
-                      <PlusIcon
-                        onClick={() => {
-                          router.push("/add-course-plan");
-                        }}
-                      />
+                      <PlusIcon />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -203,16 +202,19 @@ const Page = () => {
         <div className="w-4/5 flex ml-2 gap-2 relative rounded-md ">
           {/* overlay */}
           <div className="absolute top-0 left-0 w-full h-full bg-gray-100 bg-opacity-50 z-50 grid place-items-center rounded-md  backdrop-blur-sm">
-            <div className="p-4 mt-4">
+            <div className="p-4 mt-4 w-9/12">
               <p className="text-sm text-gray-500 my-2">
-                The end of the semester is approaching. You can no longer edit
-                your schedule. Please give feedback on your experience.
+                As the semester draws to a close, it&apos;s important to note
+                that schedule modifications are no longer possible.
+                <br />
+                We value your feedback on your academic journey.
               </p>
               <p className="text-sm cursor-pointer hover:underline my-2 text-gray-500">
-                Help other students by sharing your class experience.{" "}
+                Enhance the learning experience for fellow students by sharing
+                insights from your classes.
               </p>
               <Link href="/share-experience">
-                <Button variant="default">Share Class Experience</Button>
+                <Button variant="default">Share Your Class Experience</Button>
               </Link>
             </div>
           </div>

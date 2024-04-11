@@ -185,6 +185,11 @@ const Page = () => {
                       </PopoverContent>
                     </Popover>
                   </div>
+                  {/* {endDate && startDate && endDate < startDate && (
+                    <div className="col-span-4 text-red-500">
+                      End date must be after start date
+                    </div>
+                  )} */}
                 </div>
                 <DialogFooter>
                   <DialogClose asChild>
