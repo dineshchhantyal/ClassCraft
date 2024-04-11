@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { Link } from "lucide-react";
 import React, { useCallback, useState } from "react";
 
 const Page = () => {
@@ -98,7 +99,7 @@ const Page = () => {
     [courses]
   );
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto mt-4">
       {" "}
       <div className="flex justify-between">
         <div className="w-1/5">
@@ -123,6 +124,19 @@ const Page = () => {
               />
               <SearchIcon className="absolute right-3 top-3 text-gray-500 hover:text-gray-300 cursor-not-allowed" />
             </div>
+          </div>
+          {/* end of semester approaching, cannot edit please give feedback */}
+          <div className="bg-yellow-100 p-4 rounded-md mt-4">
+            <p className="text-sm text-gray-500 my-2">
+              The end of the semester is approaching. You can no longer edit
+              your schedule. Please give feedback on your experience.
+            </p>
+            <p className="text-sm cursor-pointer hover:underline my-2 text-gray-500">
+              Help other students by sharing your class experience.{" "}
+            </p>
+            <Link href="/share-experience">
+              <Button variant="default">Share Class Experience</Button>
+            </Link>
           </div>
         </div>
         <div className="w-4/5 flex ml-2 gap-2">
@@ -149,7 +163,7 @@ const Page = () => {
                     key={course.id}
                     className={cn(
                       `bg-${getClassColor(course)}`,
-                      "p-2 rounded-md"
+                      "p-2 rounded-md cursor-not-allowed"
                     )}
                   >
                     <p className="text-sm">{course.name}</p>
@@ -163,47 +177,47 @@ const Page = () => {
                 ))}
               </div>
               <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md">
+                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CINS 3044-40277</p>
                   <p className="text-xs">11:00am-12:15pm</p>
                   <p className="text-xs">Hemphill Hall</p>
                 </div>
                 {Math.random() > 0.5 && <div className="h-8"></div>}
 
-                <div className="bg-green-200 p-2 rounded-md">
+                <div className="bg-green-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CSCI 3020-42501</p>
                   <p className="text-xs">12:30pm-1:45pm</p>
                   <p className="text-xs">Hemphill Hall 308</p>
                 </div>
                 {Math.random() > 0.5 && <div className="h-8"></div>}
                 {Math.random() > 0.5 && <div className="h-8"></div>}
-                <div className="bg-red-200 p-2 rounded-md">
+                <div className="bg-red-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CSCI 4055-45480</p>
                   <p className="text-xs">2:00pm-3:15pm</p>
                   <p className="text-xs">Hemphill Hall</p>
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md">
+                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CSCI 3030-43896</p>
                   <p className="text-xs">11:00am-12:15pm</p>
                   <p className="text-xs">Hemphill Hall</p>
                 </div>
                 {Math.random() > 0.5 && <div className="h-8"></div>}
                 {Math.random() > 0.5 && <div className="h-8"></div>}
-                <div className="bg-blue-200 p-2 rounded-md">
+                <div className="bg-blue-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">ENGL 2050-44685</p>
                   <p className="text-xs">12:30pm-1:45pm</p>
                   <p className="text-xs">George T Walker Hall 3-91</p>
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md">
+                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CSCI 1070-40409</p>
                   <p className="text-xs">8:00am-9:15am</p>
                   <p className="text-xs">Hemphill Hall 308</p>
                 </div>
-                <div className="bg-green-200 p-2 rounded-md">
+                <div className="bg-green-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CSCI 3020-42501</p>
                   <p className="text-xs">12:30pm-1:45pm</p>
                   <p className="text-xs">Hemphill Hall 308</p>
@@ -212,7 +226,7 @@ const Page = () => {
               {Math.random() > 0.5 && <div className="h-8"></div>}
               {Math.random() > 0.5 && <div className="h-8"></div>}
               <div className="space-y-4">
-                <div className="bg-yellow-200 p-2 rounded-md">
+                <div className="bg-yellow-200 p-2 rounded-md cursor-not-allowed">
                   <p className="text-sm">CINS 3044-40277</p>
                   <p className="text-xs">11:00am-12:15pm</p>
                   <p className="text-xs">Hemphill Hall</p>
