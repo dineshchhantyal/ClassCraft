@@ -112,7 +112,7 @@ const Page = () => {
       <div className="flex justify-between">
         <div className="w-1/5">
           <div className="flex flex-col space-y-4">
-            <h1 className="text-3xl font-bold">Fall 2024</h1>
+            <h1 className="text-3xl font-bold">Spring 2024</h1>
             <span className="text-lg font-semibold">21 credits</span>
 
             <div className="flex space-x-2 items-center cursor-pointer">
