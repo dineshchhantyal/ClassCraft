@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
 import Layout from "@/components/layout/layout";
-import AuthLayout from "@/components/layout/authLayout";
 import { Input } from "@/components/ui/input";
-import { use } from "react";
 import { useAuthContext } from "@/context/AuthContext";
 import Link from "next/link";
 
@@ -20,7 +16,7 @@ export default function Home() {
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 Your Academic Adventure Awaits
               </h1>
-              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="text-gray-500 text-base dark:text-gray-400">
                 Plan your courses. Share your insights. Level up your learning.
               </p>
             </div>
@@ -53,78 +49,41 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <Image
-            alt="Image"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-            height="500"
-            src="/placeholder.svg"
-            width="1110"
-          />
-        </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Effortless Schedule Planning
+      {/* make 2 * 2 grid for features no image required */}
+      <section className="container mx-auto py-12 md:py-24 lg:py-32 grid grid-cols-1 md:grid-cols-2">
+        <div className="flex flex-col gap-4 px-4 md:px-6 lg:gap-10 min-h-48">
+          <div className="space-y-4 ">
+            <h2 className="text-3xl font-bold tracking-tighter">
+              Effortless Course Planning
             </h2>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              With ClassCraft, building your semester schedule is a breeze. Just
-              like Coursicle, you can drag and drop classes, visualize your
-              week, and avoid conflicts.
+            <p className="mx-auto max-w-3xl text-gray-500 text-base dark:text-gray-400">
+              With ClassCraft, you can easily plan your courses for the
+              semester. Drag and drop classes, visualize your week, and avoid
+              conflicts.
             </p>
           </div>
         </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <Image
-            alt="Image"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-            height="500"
-            src="/placeholder.svg"
-            width="1110"
-          />
-        </div>
-      </section>
 
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        <div className="flex flex-col gap-4 px-4 md:px-6 lg:gap-10 min-h-48">
+          <div className="space-y-4 ">
+            <h2 className="text-3xl font-bold tracking-tighter">
               Post-Semester Insights
             </h2>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              After each semester, you have the opportunity to earn money by
-              sharing valuable feedback on the courses you took. Write reviews
-              about assignments, difficulty level, recommended textbooks, and
-              more. Your insights will help other students avoid pitfalls and
-              excel.
+            <p className="mx-auto max-w-3xl text-gray-500 text-base dark:text-gray-400">
+              After each semester, you can earn money by sharing valuable
+              feedback on the courses you took. Write reviews about assignments,
+              difficulty level, recommended textbooks, and more. Your insights
+              will help other students avoid pitfalls and excel.
             </p>
           </div>
         </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <Image
-            alt="Image"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-            height="500"
-            src="/placeholder.svg"
-            width="1110"
-          />
-        </div>
-      </section>
 
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        <div className="flex flex-col gap-4 px-4 md:px-6 lg:gap-10 min-h-48">
+          <div className="space-y-4 ">
+            <h2 className="text-3xl font-bold tracking-tighter">
               Data-Driven Decisions
             </h2>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="mx-auto max-w-3xl text-gray-500 text-base dark:text-gray-400">
               ClassCraft empowers you to make informed choices for your next
               semester. Utilize the feedback you provide and access anonymized
               reviews from other students to plan your coursework with
@@ -132,42 +91,18 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <Image
-            alt="Image"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-            height="500"
-            src="/placeholder.svg"
-            width="1110"
-          />
-        </div>
-      </section>
 
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        <div className="flex flex-col gap-4 px-4 md:px-6 lg:gap-10 min-h-48">
+          <div className="space-y-4 ">
+            <h2 className="text-3xl font-bold tracking-tighter">
               Solve the Unknown
             </h2>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="mx-auto max-w-3xl text-gray-500 text-base dark:text-gray-400">
               Say goodbye to the hassle of searching for course materials. With
               ClassCraft, you&apos;ll get the inside scoop on assignments and
               preferred learning styles.
             </p>
           </div>
-        </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-4 px-4 md:px-6 lg:gap-10">
-          <Image
-            alt="Image"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
-            height="500"
-            src="/placeholder.svg"
-            width="1110"
-          />
         </div>
       </section>
     </>
