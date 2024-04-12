@@ -513,7 +513,7 @@ const courses = [
   },
 ];
 
-const getTime = (date: number) => {
+export const getTime = (date: number) => {
   // time is in format HH.MM
   // but MM = 15, 30, 45
   // so we need to replace . with :

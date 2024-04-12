@@ -265,12 +265,12 @@ const Page = () => {
                       </TooltipProvider>
                     </div>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-[425px]">
+                  <DialogContent className="max-w-2xl max-h-screen overflow-y-scroll overflow-x-hidden">
                     <DialogHeader>
                       <DialogTitle>{course.name}</DialogTitle>
-                      <DialogDescription>
+                      {/* <DialogDescription>
                         {course.description}
-                      </DialogDescription>
+                      </DialogDescription> */}
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
                       {/* more */}
