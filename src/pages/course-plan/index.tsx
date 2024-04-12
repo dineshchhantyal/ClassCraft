@@ -37,42 +37,42 @@ const Page = () => {
       endTime: 12.15,
       days: ["Tues", "Thur"],
     },
-    {
-      id: 3,
-      name: "ENGL 2050-44685",
-      time: "12:30pm-1:45pm",
-      location: "George T Walker Hall 3-91",
-      startTime: 12.5,
-      endTime: 1.45,
-      days: ["Mon", "Wed"],
-    },
-    {
-      id: 4,
-      name: "CSCI 4055-45480",
-      time: "2:00pm-3:15pm",
-      location: "Hemphill Hall",
-      startTime: 2,
-      endTime: 3.15,
-      days: ["Tues", "Thur"],
-    },
-    {
-      id: 5,
-      name: "CINS 3044-40277",
-      time: "11:00am-12:15pm",
-      location: "Hemphill Hall",
-      startTime: 11,
-      endTime: 12.15,
-      days: ["Mon", "Wed"],
-    },
-    {
-      id: 6,
-      name: "CSCI 3020-42501",
-      time: "12:30pm-1:45pm",
-      location: "Hemphill Hall 308",
-      startTime: 12.5,
-      endTime: 1.45,
-      days: ["Tues", "Thur"],
-    },
+    // {
+    //   id: 3,
+    //   name: "ENGL 2050-44685",
+    //   time: "12:30pm-1:45pm",
+    //   location: "George T Walker Hall 3-91",
+    //   startTime: 12.5,
+    //   endTime: 1.45,
+    //   days: ["Mon", "Wed"],
+    // },
+    // {
+    //   id: 4,
+    //   name: "CSCI 4055-45480",
+    //   time: "2:00pm-3:15pm",
+    //   location: "Hemphill Hall",
+    //   startTime: 2,
+    //   endTime: 3.15,
+    //   days: ["Tues", "Thur"],
+    // },
+    // {
+    //   id: 5,
+    //   name: "CINS 3044-40277",
+    //   time: "11:00am-12:15pm",
+    //   location: "Hemphill Hall",
+    //   startTime: 11,
+    //   endTime: 12.15,
+    //   days: ["Mon", "Wed"],
+    // },
+    // {
+    //   id: 6,
+    //   name: "CSCI 3020-42501",
+    //   time: "12:30pm-1:45pm",
+    //   location: "Hemphill Hall 308",
+    //   startTime: 12.5,
+    //   endTime: 1.45,
+    //   days: ["Tues", "Thur"],
+    // },
   ];
 
   const days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
@@ -201,15 +201,15 @@ const Page = () => {
         </div>
         <div className="w-4/5 flex ml-2 gap-2 relative rounded-md ">
           {/* overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gray-100 bg-opacity-50 z-50 grid place-items-center rounded-md  backdrop-blur-sm">
+          <div className="absolute top-0 left-0 w-full h-full bg-gray-100 bg-opacity-50 z-50 grid place-items-center backdrop-blur-sm border p-4 rounded border-yellow-200">
             <div className="p-4 mt-4 w-9/12">
-              <p className="text-sm text-gray-500 my-2">
+              <p className="text-sm text-green-500 font-semibold my-2">
                 As the semester draws to a close, it&apos;s important to note
                 that schedule modifications are no longer possible.
                 <br />
                 We value your feedback on your academic journey.
               </p>
-              <p className="text-sm cursor-pointer hover:underline my-2 text-gray-500">
+              <p className="text-sm cursor-pointer hover:underline my-2 text-green-800 font-semibold">
                 Enhance the learning experience for fellow students by sharing
                 insights from your classes.
               </p>
