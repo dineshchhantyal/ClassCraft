@@ -7,11 +7,7 @@ import ReactFlow, {
   Edge,
   ConnectionLineType,
 } from "reactflow";
-// ../CustomNode import 'reactflow/dist/style.css';
-
 import "reactflow/dist/style.css";
-
-// import SidePanel from '../SidePanel';
 
 import { Drawer } from "antd";
 import { useCallback, useState } from "react";
@@ -194,7 +190,7 @@ const defaultEdgeOptions = {
   type: "smoothstep",
 };
 
-function Page() {
+export default function Page() {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [currentNode, setCurrentNode] = useState({
@@ -317,8 +313,6 @@ function Page() {
     </div>
   );
 }
-
-export default Page;
 
 Page.getLayout = function getLayout(page: React.ReactNode) {
   return (
