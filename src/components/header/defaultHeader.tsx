@@ -40,8 +40,13 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
         {user ? (
           <div className="flex items-center gap-4 md:gap-6">
             <Link href="/course-plan">
+              <Button size="sm" variant="ghost">
+                Course Schedule
+              </Button>
+            </Link>
+            <Link href="/four-year">
               <Button size="sm" variant="outline">
-                Course Plan
+                4 Year Plan
               </Button>
             </Link>
 
