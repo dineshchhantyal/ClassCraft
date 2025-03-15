@@ -50,6 +50,12 @@ const DefaultHeader = ({}: DefaultHeadersProps) => {
               </Button>
             </Link>
 
+            <Link href="/course-flow">
+              <Button size="sm" variant="outline">
+                Course Flow
+              </Button>
+            </Link>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="rounded-full overflow-hidden border-2 border-gray-200 shadow-sm hover:filter hover:brightness-105 cursor-pointer">
