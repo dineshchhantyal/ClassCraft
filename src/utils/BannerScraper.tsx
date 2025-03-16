@@ -19,6 +19,8 @@ export class BannerScraper {
   
   async initialize() {
     const options = new chrome.Options();
+    options.addArguments('--headless'); // Run in headless mode
+    options.addArguments('--no-sandbox');
     options.addArguments('--disable-gpu');
     options.addArguments('--window-size=1920,1080'); 
     options.addArguments('--start-maximized'); 
